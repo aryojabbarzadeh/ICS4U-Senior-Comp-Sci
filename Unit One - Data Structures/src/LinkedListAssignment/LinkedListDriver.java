@@ -52,7 +52,7 @@ public class LinkedListDriver {
         String FirstN = (in.nextLine());
         System.out.print("Please Enter the Phone Number: ");
         String pNumber = (in.nextLine());
-        Contact f = new Contact(FirstN, LastN, pNumber);
+        Contact f = new Contact(FirstN, LastN, pNumber); //puts the all the strings above into the contact
         contacts.add(f);
     } 
     private static void searchContact(ContactLinkedList contacts){ 
