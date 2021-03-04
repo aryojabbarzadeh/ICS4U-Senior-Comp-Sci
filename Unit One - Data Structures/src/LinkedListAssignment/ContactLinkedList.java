@@ -7,7 +7,7 @@ public class ContactLinkedList {
       this.head = null;
     }
   
-    public void add(Contact c) {
+    public void add(Contact c) {  //adds a contact
       ContactNode node = new ContactNode(c, null);
       if (head == null)
         head = node;
@@ -22,7 +22,7 @@ public class ContactLinkedList {
       }
     }
   
-    public void remove(String phone) {
+    public void remove(String phone) { //remove a contact
       if (head == null)
         return;
       else if (head.getData().getPhone().equals(phone))
@@ -40,7 +40,7 @@ public class ContactLinkedList {
   
     }
 
-    public void search (String lName){
+    public void search (String lName){ //searches for a specific contact
         ContactNode ptr = head;
         while(ptr !=null){
             if (ptr.getData().getlName().equals(lName)){
@@ -55,7 +55,7 @@ public class ContactLinkedList {
     
 
     public static void printList(ContactLinkedList list) 
-    { 
+    { //prints contact
         ContactNode ptr = list.head; 
     
         System.out.print("Contacts: "); 
