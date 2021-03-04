@@ -29,7 +29,7 @@ public class ContactLinkedList {
         head = head.getLink();
       else {
         ContactNode ptr = head;
-        while (ptr.getLink() != null && !ptr.getLink().getData().getPhone().equals(phone)) {
+        while (ptr.getLink() != null && !ptr.getLink().getData().getPhone().equals(phone)) { //searches for the phone number
           ptr = ptr.getLink();
         }
         if (ptr.getLink() == null)
@@ -45,9 +45,9 @@ public class ContactLinkedList {
         while(ptr !=null){
             if (ptr.getData().getlName().equals(lName)){
                 System.out.println(ptr.getData().toString()); 
-                ptr = ptr.getLink();
+                ptr = ptr.getLink(); //iterates through
             }else{
-                ptr = ptr.getLink();
+                ptr = ptr.getLink(); //iterates through
             }
             }
 
@@ -70,5 +70,6 @@ public class ContactLinkedList {
         } 
     } 
 }
+  
   
   
