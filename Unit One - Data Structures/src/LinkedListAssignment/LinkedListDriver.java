@@ -44,7 +44,11 @@ public class LinkedListDriver {
         ni.close();
         options.close();
     }
-    private static void newContact(ContactLinkedList contacts){
+    /**
+     * adds a contact
+     * @param contacts
+     */
+    private static void newContact(ContactLinkedList contacts){ 
         Scanner in = new Scanner (System.in);
         System.out.print("Please Enter the Last Name: ");
         String LastN = (in.nextLine());
@@ -52,16 +56,24 @@ public class LinkedListDriver {
         String FirstN = (in.nextLine());
         System.out.print("Please Enter the Phone Number: ");
         String pNumber = (in.nextLine());
-        Contact f = new Contact(FirstN, LastN, pNumber);
+        Contact f = new Contact(FirstN, LastN, pNumber); //puts the all the strings above into the contact
         contacts.add(f);
     } 
+    /**
+     * searches for a specific contact
+     * @param contacts
+     */
     private static void searchContact(ContactLinkedList contacts){ 
         Scanner in = new Scanner (System.in); 
         System.out.print("Please Enter the Last Name of the Contact: ");
         String lName = (in.nextLine());
         contacts.search(lName);
     }
-    private static void deleteContact(ContactLinkedList contacts){
+    /**
+     * deletes a contact
+     * @param contacts
+     */
+    private static void deleteContact(ContactLinkedList contacts){ 
         Scanner in = new Scanner (System.in);
         System.out.println("Please enter the phone number of the contact you would like to delete: ");
         String num = (in.nextLine());
