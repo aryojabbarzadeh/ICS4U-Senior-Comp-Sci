@@ -2,10 +2,11 @@ package Gradebook;
 
 public class Student {
 
+    private static final int MAX_ASSESMENTS = 50;
     private String fname;
     private String lname;
     private String Snumber;
-    private static Assessment[] assessments;
+    private static Assessment[] assessments = new Assessment[MAX_ASSESMENTS];
     private static int numAssess;
 
     public Student(String fname, String lname, String Snumber) {
@@ -14,6 +15,8 @@ public class Student {
         this.Snumber = Snumber;
 
     }
+
+
 
     public String getfName(){
         return fname;
@@ -32,23 +35,29 @@ public class Student {
         numAssess++;
     }
 
-    public void getAverage(){
+    public static void getAverage(){
         int allMarks = 0;
+        int k = 0;
         for (int i = 0; i<assessments.length-1;i++){
-            allMarks = allMarks + assessments[i].getaMark();
+            if (assessments[i]!=null){
+            allMarks += assessments[i].getaMark();
+            k++;
+            }
         }
 
-        allMarks = allMarks/assessments.length;
+        allMarks = allMarks/k;
         System.out.println(allMarks);
     }
 
     public static void getAverage(String courseCode){
         int allMarks = 0;
-        int k = 1;
+        int k = 0;
         for (int i = 0; i<assessments.length-1;i++){
+            if (assessments[i]!=null){
             if (assessments[i].getcourseCode().equals(courseCode)){
-                allMarks = allMarks + assessments[i].getaMark();
+                allMarks += assessments[i].getaMark();
                 k++;
+            }
             }
         }
 

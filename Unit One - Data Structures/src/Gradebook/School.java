@@ -3,10 +3,13 @@ package Gradebook;
 import java.util.Scanner;
 
 public class School {
-    private static Student[] enrolledStudents;
+    private static final int MAX_STUDENTS = 1000;
+    private static final int MAX_CLASSES = 50;
+    private static Student[] enrolledStudents = new Student[MAX_STUDENTS];
     private static int numStudents = 0;
-    private static Course[] offeredCourses;
+    private static Course[] offeredCourses = new Course[MAX_CLASSES];
     private static int numCourses = 0;
+
 
     static Scanner in = new Scanner(System.in);
 
@@ -35,20 +38,22 @@ public class School {
     }
 
     public static void displayStudents(){
-        for(Student x:enrolledStudents){
-          if (x!=null){
+        for(int x = 0; x<enrolledStudents.length-1; x++){
+            if (enrolledStudents[x]!=null){
               System.out.println();
-              System.out.println(x.getfName());
-              System.out.println(x.getlName());
-              System.out.println(x.getSnumber());
+              System.out.print(enrolledStudents[x].getfName()+" ");
+              System.out.print(enrolledStudents[x].getlName()+", ");
+              System.out.println("Student Number: " + enrolledStudents[x].getSnumber());
           }  
         }
     }
 
     public static void addAssess(){
+        System.out.println("Please enter the student number: ");
         String Snumber = in.nextLine();
-        for(Student x:enrolledStudents){
-            if (x.getSnumber()==Snumber){
+        for(int x = 0; x<enrolledStudents.length-1; x++){
+            if (enrolledStudents[x]!=null){
+            if (enrolledStudents[x].getSnumber().equals(Snumber)){
                 System.out.println("Please enter the name of the assessment: ");
                 String aName = in.nextLine();
                 System.out.println("Please enter the mark: ");
@@ -59,6 +64,7 @@ public class School {
                 Assessment a = new Assessment(aName, aMark, courseCode);
                 Student.addAssessment(a);
             }
+        }
         }
 
     }
