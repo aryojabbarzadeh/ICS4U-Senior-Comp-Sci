@@ -6,11 +6,16 @@ public class ContactLinkedList {
     public ContactLinkedList() {
       this.head = null;
     }
+<<<<<<< HEAD
   /**
    * //adds a contact
    * @param c
    */
     public void add(Contact c) {  
+=======
+  
+    public void add(Contact c) {  //adds a contact
+>>>>>>> 5c173dbad9514d695e2b5e9f52e7929af0d4a338
       ContactNode node = new ContactNode(c, null);
       if (head == null)
         head = node;
@@ -24,11 +29,16 @@ public class ContactLinkedList {
         ptr.setLink(node);
       }
     }
+<<<<<<< HEAD
   /**
    * //remove a contact
    * @param phone
    */
     public void remove(String phone) { 
+=======
+  
+    public void remove(String phone) { //remove a contact
+>>>>>>> 5c173dbad9514d695e2b5e9f52e7929af0d4a338
       if (head == null)
         return;
       else if (head.getData().getPhone().equals(phone))
@@ -46,12 +56,16 @@ public class ContactLinkedList {
   
     }
 
+<<<<<<< HEAD
   /**
    * searches for a specific contact
    * @param lName
    */
 
     public void search (String lName){ 
+=======
+    public void search (String lName){ //searches for a specific contact
+>>>>>>> 5c173dbad9514d695e2b5e9f52e7929af0d4a338
         ContactNode ptr = head;
         while(ptr !=null){
             if (ptr.getData().getlName().equals(lName)){
@@ -69,7 +83,7 @@ public class ContactLinkedList {
      * @param list
      */
     public static void printList(ContactLinkedList list) 
-    { 
+    { //prints contact
         ContactNode ptr = list.head; 
     
         System.out.print("Contacts: \n"); 
@@ -84,5 +98,6 @@ public class ContactLinkedList {
         } 
     } 
 }
+  
   
   

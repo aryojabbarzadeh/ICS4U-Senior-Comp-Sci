@@ -44,11 +44,15 @@ public class LinkedListDriver {
         ni.close();
         options.close();
     }
+<<<<<<< HEAD
     /**
      * adds a contact
      * @param contacts
      */
     private static void newContact(ContactLinkedList contacts){ 
+=======
+    private static void newContact(ContactLinkedList contacts){ //adds a contact
+>>>>>>> 5c173dbad9514d695e2b5e9f52e7929af0d4a338
         Scanner in = new Scanner (System.in);
         System.out.print("Please Enter the Last Name: ");
         String LastN = (in.nextLine());
@@ -59,21 +63,29 @@ public class LinkedListDriver {
         Contact f = new Contact(FirstN, LastN, pNumber); //puts the all the strings above into the contact
         contacts.add(f);
     } 
+<<<<<<< HEAD
     /**
      * searches for a specific contact
      * @param contacts
      */
     private static void searchContact(ContactLinkedList contacts){ 
+=======
+    private static void searchContact(ContactLinkedList contacts){ //searches for a specific contact
+>>>>>>> 5c173dbad9514d695e2b5e9f52e7929af0d4a338
         Scanner in = new Scanner (System.in); 
         System.out.print("Please Enter the Last Name of the Contact: ");
         String lName = (in.nextLine());
         contacts.search(lName);
     }
+<<<<<<< HEAD
     /**
      * deletes a contact
      * @param contacts
      */
     private static void deleteContact(ContactLinkedList contacts){ 
+=======
+    private static void deleteContact(ContactLinkedList contacts){ //deletes a contact
+>>>>>>> 5c173dbad9514d695e2b5e9f52e7929af0d4a338
         Scanner in = new Scanner (System.in);
         System.out.println("Please enter the phone number of the contact you would like to delete: ");
         String num = (in.nextLine());
